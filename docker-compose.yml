@@ -1,0 +1,14 @@
+version: "3.9" #version of the docker compose syntax that we are going to be using
+
+services: 
+  app:
+    build:
+      context: . #build the docker inside current directory in this case
+  ports:
+   - "8000:8000" #local machine and docker container ports
+  volumes:
+    - ./app:/app #mapping directories from our system into docker container ./app iz lokala u /app udockeru
+  command: >
+   sh -c "python manage.py runserver 0.0.0.0:8000"
+
+#command
