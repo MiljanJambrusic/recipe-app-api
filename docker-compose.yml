@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000" #port for local and container
     volumes:
-      - ./app:/app #from ./app to container 
+      - ./app:/app #from ./app to container
     command: >
       sh -c "python manage.py wait_for_db &&
        python manage.py migrate &&
@@ -18,10 +18,10 @@ services:
       - DB_HOST=db
       - DB_NAME=devdb
       - DB_USER=devuser
-      - DB_PASS=changeme
+      - DB_PASS=Mozzart.21101995
     depends_on:
       - db
-  
+
   db:
     image: postgres:13-alpine
     volumes:
@@ -29,8 +29,8 @@ services:
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
-      - POSTGRES_PASSWORD=change+me
+      - POSTGRES_PASSWORD=Mozzart.21101995
 
 volumes:
-  dev-db-data: 
+  dev-db-data:
 
